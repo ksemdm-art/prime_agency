@@ -1,0 +1,228 @@
+@import 'normalize.scss';
+
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-Medium.eot');
+    src: local('TT Norms Medium'), local('TTNorms-Medium'),
+        url('../fonts/TTNorms-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-Medium.woff') format('woff'),
+        url('../fonts/TTNorms-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-Bold.eot');
+    src: local('TT Norms Bold'), local('TTNorms-Bold'),
+        url('../fonts/TTNorms-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-Bold.woff') format('woff'),
+        url('../fonts/TTNorms-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-ExtraBold.eot');
+    src: local('TT Norms ExtraBold'), local('TTNorms-ExtraBold'),
+        url('../fonts/TTNorms-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-ExtraBold.woff') format('woff'),
+        url('../fonts/TTNorms-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-Black.eot');
+    src: local('TT Norms Black'), local('TTNorms-Black'),
+        url('../fonts/TTNorms-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-Black.woff') format('woff'),
+        url('../fonts/TTNorms-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+%contentSizing{
+    margin-right: 89.5px/1367px*100%;
+    margin-left: 89.5px/1367px*100%;
+}
+
+body,
+html{
+    height: 100%;
+}
+
+body{
+    max-width: 100%;
+    background-image: url(../img/background.svg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.section-header {
+    max-width: 1367px;
+    max-height: 50px;
+    position: relative;
+    margin-top: 7px/768px*100%;
+    @extend %contentSizing;
+    z-index: 50;
+    .section-inner__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .header__list{
+        display: flex;
+        text-decoration: none;
+
+        li{
+            list-style: none; 
+            margin: 0px 0px 0px 30px;
+            .header__link{
+                text-decoration: none;
+                font-family: TT Norms;
+                font-weight: 500;
+                font-size: 15.92pt;
+                color: #fff;
+            }
+        }
+
+    }
+}
+
+
+.section-content{
+
+    max-width: 1367px;
+    @extend %contentSizing;
+
+    .section-content__wrapper{
+        max-width: 1367px;
+        max-height: 550px;
+        display: grid;
+        justify-content: stretch;
+        grid-column-gap: 2%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "blank marlow marlow"
+        "blank blank content"
+        "picture picture blank"
+        "picture picture footer";
+
+    }
+
+    img{
+        width:617 px;
+        height:570px;
+    }
+    .section-content__image{
+        grid-area: picture;
+        grid-column: span 2;
+        grid-row: span 2;
+        margin-left: -30%;
+    }
+    .section-inner__content{
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-end;
+        width:805px;
+    }
+    .section-content__offer{
+        grid-area: content;
+        font-family: TT Norms;
+        text-transform: uppercase;
+        text-align: center;
+        margin-left: 500px/1367px*100%;
+        width: 805px;
+        color: #fff;
+
+        .offer__artists{
+            font-weight: 900;
+            font-size: 36pt;
+            letter-spacing: -0.08em;
+            .offer__artists-left{
+                grid-column: span 2;
+                margin-left: -30%;
+            }
+            .offer__artists-tab{
+                margin-top: -8%;
+                margin-left: 20%;
+                grid-row: span 2;
+                .offer__artists__limba{
+                    margin-left: -65%;
+                }
+            }
+        }
+
+        .offer__concert{
+            font-weight: 400;
+            font-size: 18px;
+            margin-left: -25%;
+        } 
+        
+        .offer__date{
+            font-weight: 800;
+            margin-left: -25%;
+        }
+
+        .offer__button{
+            margin-top: 4%;
+            margin-left: -25%;
+            width: 720px/1367px*100%;
+            height: 80px/768px*100%;
+
+            font-weight: 700;
+            font-size: 18px;
+            color: #fff;
+            background-color: #FA5000;
+            border: solid #FA5000 1px;
+            border-radius: 15px;
+        }
+    }
+
+    .section-footer__social{
+
+        grid-area: footer;
+        grid-column: span 1;
+        float: right;
+        margin-top: 5%;
+        .footer__vk{
+            height:5%
+        }
+    
+        .footer__inst{
+            height: 5%;
+        }
+    
+        .footer__mail{
+            height: 5%;
+            margin-left: -1%;
+        }
+    }
+
+    .section-content__ups{
+        max-width: 1367px;
+        font-family: TT Norms;
+        font-weight: 500;
+        font-size:  18pt;
+        color: #fff;
+        align-content: center;
+        text-align: center;
+        margin-left: 25%;
+
+        .img__ups{
+            height: 65%;
+            width: 65%;
+
+            margin-left: 10%;
+            margin-top: 5%;
+            opacity: 75%;
+        }
+    }
+}
